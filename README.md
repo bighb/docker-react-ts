@@ -1,23 +1,20 @@
 # React + TypeScript + Vite
 
-这是一个使用 Docker 进行构建和部署的React 项目。
+这是一个使用 Docker 进行构建和部署的 React 项目。
 
-## 构建
+## 安装
 
-首先，你需要安装 Docker。安装完成后，你可以使用以下命令来构建 Docker 镜像：
+首先，确保你的系统上已经安装了 Docker 和 Docker Compose。如果还没有安装，你可以参考以下链接进行安装：
 
-```bash
-docker build -t your-image-name .
-```
-
-这个命令会根据当前目录下的 Dockerfile 来构建一个 Docker 镜像，`-t` 参数用于指定镜像的名称。
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## 运行
 
 构建完成后，你可以使用以下命令来运行你的应用：
 
 ```
-docker run  -d -p 80:80 your-image-name
+docker-compose up -d --build
 ```
 
 这个命令会启动一个新的 Docker 容器，并将容器的 80 端口映射到主机的 80 端口。**-d** 代表 "分离模式"。这意味着容器将在后台运行，不会阻塞命令行界面。

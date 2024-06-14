@@ -1,8 +1,22 @@
-// Home.tsx
+// components/Home.tsx
 import React from "react";
+import { useFetch } from "../hooks/useFetch";
+import Posts from "./Posts";
 
 const Home: React.FC = () => {
-  return <h1>欢迎来到主页</h1>;
+  const { data, error, isLoading } = useFetch(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  return (
+    <div>
+      <h1>Home</h1>
+      <Posts posts={data} />
+    </div>
+  );
 };
 
 export default Home;
