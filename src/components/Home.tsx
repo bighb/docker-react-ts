@@ -5,7 +5,7 @@ import Posts from "./Posts";
 
 const Home: React.FC = () => {
   const { data, error, isLoading } = useFetch(
-    "https://jsonplaceholder.typicode.com/posts"
+    "http://localhost:3000/api/hello"
   );
 
   if (isLoading) return <div>Loading...</div>;
@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <h1>Home</h1>
-      <Posts posts={data} />
+      <Posts posts={data.list} />
     </div>
   );
 };

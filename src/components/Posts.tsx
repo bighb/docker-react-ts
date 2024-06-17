@@ -2,9 +2,9 @@
 import React from "react";
 
 interface Post {
-  id: number;
-  title: string;
-  body: string;
+  customerNumber: number;
+  customerName: string;
+  contactLastName: string;
 }
 
 interface PostsProps {
@@ -14,9 +14,9 @@ interface PostsProps {
 const Posts: React.FC<PostsProps> = ({ posts }) => (
   <ul>
     {posts.map((post) => (
-      <li key={post.id}>
-        <h2>{post.title}</h2>
-        <p>{post.body}</p>
+      <li key={post.customerNumber}>
+        <h2>{post.customerName}</h2>
+        <p>{post.contactLastName}</p>
       </li>
     ))}
   </ul>
